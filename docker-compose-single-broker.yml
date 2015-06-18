@@ -1,0 +1,10 @@
+
+# kafka configuration
+kafka:
+  image: belbis/kafka:0.8.2.1  # using our own image
+  ports:
+    - "9092:9092"
+  environment:
+    KAFKA_ADVERTISED_HOST_NAME: 192.168.59.103  # wut
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock

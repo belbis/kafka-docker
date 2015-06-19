@@ -10,7 +10,14 @@ ENV container docker
 
 # ensure java && docker installed
 RUN apt-get update
-RUN apt-get install -y unzip openjdk-8-jdk
+
+RUN add-apt-repository ppa:webupd8team/java
+RUN apt-get update
+RUN apt-get install oracle-java8-installer
+RUN apt-get install oracle-java8-set-default
+
+#RUN apt-get install -y unzip openjdk-8-jdk
+
 RUN wget curl git docker.io jq
 
 # add the download script
